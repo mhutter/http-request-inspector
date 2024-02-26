@@ -10,7 +10,7 @@ Tiny "echo" HTTP server
 Or if you prefer docker/podman/...
 
 ```sh
-docker run -it --rm -p 8080:8080 ghcr.io/mhutter/http-request-inspector:main
+docker run -it --rm -p 8080:8080 ghcr.io/mhutter/http-request-inspector:latest
 ```
 
 And then access http://127.0.0.1:8080 or:
