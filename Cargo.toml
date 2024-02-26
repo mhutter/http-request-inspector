@@ -1,0 +1,25 @@
+[package]
+name = "http-request-inspector"
+version = "0.1.0"
+authors = ["Manuel Hutter (https://github.com/mhutter)"]
+edition = "2021"
+description = "A small 'echo' HTTP server"
+repository = "https://github.com/mhutter/http-request-inspector"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+http-body-util = "0.1.0"
+hyper = { version = "1.2.0", features = ["server", "http1"] }
+hyper-util = { version = "0.1.3", default-features = false, features = [
+  "tokio",
+] }
+tokio = { version = "1.36.0", features = ["rt-multi-thread", "macros", "net", "signal"] }
+
+[profile.release]
+# Strip symbols & debuginfo from binary
+strip = true
+# Enable "fat" link-time optimizations
+lto = "fat"
+# Allow more aggressive optimizations
+codegen-units = 1
