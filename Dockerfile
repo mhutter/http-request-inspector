@@ -3,7 +3,7 @@ WORKDIR /app
 
 COPY Cargo.toml Cargo.lock .
 COPY src src/
-RUN cargo build --release
+RUN cargo build --release --locked
 
 FROM docker.io/library/debian:bookworm-slim
 ENV LISTEN_ADDR=0.0.0.0:8080

@@ -20,6 +20,10 @@ tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal
 # Strip symbols & debuginfo from binary
 strip = true
 # Enable "fat" link-time optimizations
-lto = "fat"
+lto = true
 # Allow more aggressive optimizations
 codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+debug = 0
