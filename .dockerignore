@@ -2,6 +2,7 @@
 .git/
 .gitignore
 Dockerfile
-LICENSE.txt
+LICENSE
 README.md
 target/
+renovate.json

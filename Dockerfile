@@ -1,11 +1,11 @@
-FROM docker.io/library/rust:1.81.0-slim-bookworm AS build
+FROM docker.io/library/rust:1.82-alpine AS build
 WORKDIR /app
 
-COPY Cargo.toml Cargo.lock .
-COPY src src/
+RUN apk add --no-cache mold musl-dev
+COPY . .
 RUN cargo build --release --locked
 
-FROM docker.io/library/debian:bookworm-slim
+FROM docker.io/library/alpine:latest
 ENV LISTEN_ADDR=0.0.0.0:8080
 EXPOSE 8080
 ENTRYPOINT []
