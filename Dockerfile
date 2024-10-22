@@ -10,5 +10,6 @@ ENV LISTEN_ADDR=0.0.0.0:8080
 EXPOSE 8080
 ENTRYPOINT []
 CMD ["/usr/local/bin/http-request-inspector"]
+RUN apk add --no-cache curl
 COPY --from=build /app/target/release/http-request-inspector /usr/local/bin
 USER 101010
