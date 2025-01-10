@@ -1,4 +1,4 @@
-FROM docker.io/library/rust:1.82-alpine AS build
+FROM docker.io/library/rust:1.84-alpine AS build
 WORKDIR /app
 
 RUN apk add --no-cache mold musl-dev
