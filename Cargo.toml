@@ -1,6 +1,6 @@
 [package]
 name = "http-request-inspector"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Manuel Hutter (https://github.com/mhutter)"]
 edition = "2021"
 description = "A small 'echo' HTTP server"
